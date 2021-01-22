@@ -2,7 +2,7 @@ const discord = require('discord.js');
 const config = require('../config');
 const common = require('../common');
 
-const Spotify = require('spotify-web-api.ks');
+const Spotify = require('spotify-web-api.js');
 const Spoti = new Spotify();
 
 // De esta forma llamamos a la funcion run desde otros archivos
