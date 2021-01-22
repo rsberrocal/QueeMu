@@ -47,7 +47,7 @@ fs.readdir('./commands/', ((err, files) =>{
         console.error('No se han cargado comandos');
     }
 
-    console.log(`Cargando ${jsfiles.length} comandos`);
+    console.log(`Cargando ${jsFiles.length} comandos`);
     jsFiles.forEach((f, i) =>{
         // Comando
         const props = require(`./commands/${f}`);
