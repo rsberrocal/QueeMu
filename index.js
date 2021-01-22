@@ -3,6 +3,7 @@
 const Discord = require('discord.js'); // Variable constante para acceder a la API de discord
 const fs = require('fs'); // Variable para tratar con archivos
 const config = require('./config'); // Variable para usar parametros de configuracion
+const config_priv = require('./.config-priv.json'); // Variable para usar parametros de configuracion
 const client = new Discord.Client(); // Variable que representa el usuario actual
 
 // Funcion al iniciar
@@ -15,7 +16,7 @@ client.on('ready', () => {
 });
 
 // Funcion para vincular el bot a los servidores de discord
-client.login(config.token).then(() => {
+client.login(config_priv.token).then(() => {
     // Si queremos hacer algo en ese momento, ponerlo aqui.
 });
 
