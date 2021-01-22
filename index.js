@@ -6,7 +6,7 @@ const config = require('./config'); // Variable para usar parametros de configur
 const client = new Discord.Client(); // Variable que representa el usuario actual
 
 // Funcion al iniciar
-// Es un listener que se ejecuta al
+// Es un listener que se ejecuta al ejecutarse el index
 client.on('ready', () => {
     console.log('bot ready');
     // Añadir logs en archivo
@@ -25,7 +25,7 @@ client.on('guildCreate', guild => {
     // Itera por cada canal del servidor, hasta encontra uno en el que pueda escribir, normalmente suele ser el general
     guild.channels.cache.every(channel => {
         if (channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES')) {
-            channel.send('');
+            channel.send('Sergi pwt0');
             return false;
         }
         return true;
