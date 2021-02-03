@@ -1,5 +1,6 @@
 const discord = require('discord.js');
 const config = require('../config');
+const yt = require('ytdl-core');
 const common = require('../common');
 
 //const Spotify = require('spotify-web-api.js');
@@ -10,8 +11,17 @@ module.exports.run = async (client, message, args) => {
     console.log('Running');
     if (common.isUserInChannel(message)) {//Si esta en el canal del usuario
         console.log('en canal');
+        //const connection = await message.member.voice.channel.join();
+
+        const link = args[0];
+        console.log('link', link);
+        const songInfo = await yt.getInfo(link);
+        console.log(songInfo);
+        console.log('connected');
+
     } else {
         console.log('no en canal');
+        message.channel.send('No estas en un canal de voz');
     }
 }
 
