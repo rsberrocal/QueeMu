@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 const config = require('../config');
-const yt = require('ytdl-core');
+const yt = require('ytdl-core-discord');
 const common = require('../common');
 
 //const Spotify = require('spotify-web-api.js');
@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 
         const link = args[0];
         console.log('link', link);
-        const songInfo = await yt.getInfo(link);
+        const songInfo = await yt(link);
         console.log(songInfo);
         console.log('connected');
 
