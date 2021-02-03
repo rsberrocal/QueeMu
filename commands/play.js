@@ -16,7 +16,8 @@ module.exports.run = async (client, message, args) => {
         //const connection = await message.member.voice.channel.join();
         const link = args[0];
         console.log('link', link);
-        const songInfo = await ytdl.getInfo(link)
+        const songInfo = await ytdl(link)
+
         console.log(songInfo);
         console.log('connected');
 
