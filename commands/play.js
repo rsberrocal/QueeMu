@@ -17,7 +17,10 @@ module.exports.run = async (client, message, args) => {
 
         const link = args[0];
         console.log('link', link);
-        const songInfo = await ytdl(link);
+        const songInfo = await ytdl(link).then((data) => {
+            console.log('data', data);
+
+        });
         console.log(songInfo);
         console.log('connected');
 
