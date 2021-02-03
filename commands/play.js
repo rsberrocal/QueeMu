@@ -14,24 +14,18 @@ module.exports.run = async (client, message, args) => {
     if (common.isUserInChannel(message)) {//Si esta en el canal del usuario
         console.log('en canal');
         //const connection = await message.member.voice.channel.join();
-
         const link = args[0];
         console.log('link', link);
-        const songInfo = await ytdl(link).then((data) => {
-            console.log('data', data);
-
-        });
+        const songInfo = await ytdl.getInfo(link)
         console.log(songInfo);
         console.log('connected');
 
     } else {
         console.log('no en canal');
-        message.channel.send('No estas en un canal de voz');
+        return message.channel.send('No estas en un canal de voz');
     }
 }
 
-module.exports.help = {
-    name: 'play',
-};
+module.exports.name = 'play';
 
 
