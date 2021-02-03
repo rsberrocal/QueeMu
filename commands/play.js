@@ -15,16 +15,16 @@ module.exports.run = async (client, message, args) => {
         console.log('link', link);
         const songInfo = await yt(link)
 
-        song = {
+        /*song = {
             title: songInfo.videoDetails.title,
             url: songInfo.videoDetails.video_url,
             duration: songInfo.videoDetails.lengthSeconds,
             thumbnail: songInfo.videoDetails.thumbnail.thumbnails[3].url
-        };
+        };*/
 
         const connection = await message.member.voice.channel.join();
         const dispatcher = connection.connection
-            .play(yt(song.url))
+            .play(yt(link))
         console.log(song);
         console.log('connected');
         return message.channel.send(`Escuchando ${song.title}`);
