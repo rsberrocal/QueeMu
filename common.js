@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 
-module.exports.isUserInChannel = async (message) => {
-    return message.member.voice.channel == null;
+module.exports.isUserInChannel = (message) => {
+    return message.member.voice.channel;
 }
 
