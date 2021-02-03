@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
         };*/
 
         const connection = await message.member.voice.channel.join();
-        const dispatcher = connection.play(yt(link), {
+        const dispatcher = connection.play(ytdl(link), {
             volume: 0.5
         })
         console.log(song);
