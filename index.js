@@ -53,7 +53,7 @@ fs.readdir('./commands/', ((err, files) =>{
         const props = require(`./commands/${f}`);
         console.log(`${f} cargado`);
         // Se añade en le diccionario el comando
-        client.commands.set(props.help.name, props);
+        client.commands.set(props.name, props);
     });
 }));
 
